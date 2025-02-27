@@ -22,8 +22,24 @@ export function ActivityDetails({ onNext }: ActivityDetailsProps) {
 
   const category = watch("category")
 
-  const handleNext = async () => {
-    const fieldsToValidate = [
+   const handleNext = async () => {
+    const fieldsToValidate: Array<
+      | "activityName"
+      | "category"
+      | "description"
+      | "activityType"
+      | "locationType"
+      | "minMembers"
+      | "maxMembers"
+      | "addressLine1"
+      | "addressLine2"
+      | "zipCode"
+      | "city"
+      | "state"
+      | "contactNumber"
+      | "contactName"
+      | "customCategory"
+    > = [
       "activityName",
       "category",
       "description",
@@ -32,9 +48,9 @@ export function ActivityDetails({ onNext }: ActivityDetailsProps) {
       "minMembers",
       "maxMembers",
     ]
-
+  
     const isStepValid = await trigger(fieldsToValidate)
-
+  
     if (isStepValid) {
       onNext()
     }
