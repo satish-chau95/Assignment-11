@@ -16,7 +16,7 @@ export function ActivityDetails({ onNext }: ActivityDetailsProps) {
   const {
     register,
     watch,
-    formState: { errors, isValid },
+    formState: { errors },
     trigger,
   } = useFormContext<ActivityFormData>()
 
